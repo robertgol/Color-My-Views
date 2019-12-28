@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -34,7 +35,7 @@
         android:id="@+id/boxThreeTextView"
         style="@style/WhiteBox"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="@string/box_three"
@@ -48,7 +49,7 @@
         android:id="@+id/boxFourTextView"
         style="@style/WhiteBox"
         android:layout_width="0dp"
-        android:layout_height="23dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="@string/box_four"
@@ -61,7 +62,7 @@
         android:id="@+id/boxFiveTextView"
         style="@style/WhiteBox"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="@string/box_five"
@@ -69,5 +70,67 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/boxTwoTextView"
         app:layout_constraintTop_toBottomOf="@+id/boxFourTextView" />
+
+    <TextView
+        android:id="@+id/howToPlayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/how_to_play"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boxTwoTextView" />
+
+    <TextView
+        android:id="@+id/guideTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/tap_the_buttons_and_the_screen"
+        app:layout_constraintBaseline_toBaselineOf="@+id/howToPlayTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/howToPlayTextView" />
+
+    <Button
+        android:id="@+id/redButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@android:color/holo_red_light"
+        android:text="@string/button_red"
+        android:textColor="@android:color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/greenButton"
+        app:layout_constraintEnd_toStartOf="@+id/greenButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/greenButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/holo_green_light"
+        android:text="@string/button_green"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/blueButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/redButton" />
+
+    <Button
+        android:id="@+id/blueButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/holo_blue_light"
+        android:text="@string/button_blue"
+        android:textColor="@android:color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/greenButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/greenButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
