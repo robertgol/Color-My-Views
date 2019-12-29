@@ -20,9 +20,22 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initializeButtons()
+        initializeTextViews()
+        initializeLayout()
+    }
 
+    private fun initializeButtons() {
         listOf(redButton, greenButton, blueButton).forEach { setCurrentColorChangeListener(it) }
+    }
 
+    private fun setCurrentColorChangeListener(button: Button) {
+        button.setOnClickListener { currentColor = it.getBackgroundColor() }
+    }
+
+    private fun View.getBackgroundColor() = (background as ColorDrawable).color
+
+    private fun initializeTextViews() {
         listOf(
             boxOneTextView,
             boxTwoTextView,
@@ -30,7 +43,9 @@ class MainActivity : AppCompatActivity() {
             boxFourTextView,
             boxFiveTextView
         ).forEach { it.setOnClickListener(colorSetListener) }
+    }
 
+    private fun initializeLayout() {
         layout.setOnClickListener {
             colorSetListener.onClick(it)
             hideHowToPlayGuide()
@@ -41,10 +56,4 @@ class MainActivity : AppCompatActivity() {
         howToPlayTextView.visibility = View.GONE
         guideTextView.visibility = View.GONE
     }
-
-    private fun setCurrentColorChangeListener(button: Button) {
-        button.setOnClickListener { currentColor = it.getBackgroundColor() }
-    }
-
-    private fun View.getBackgroundColor() = (background as ColorDrawable).color
 }
